@@ -1,0 +1,27 @@
+{
+  "name": "your-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "",
+  "scripts": {
+    "build": "npx fuckyea build",
+    "deploy": "npx fuckyea deploy",
+    "test": "npx fuckyea test",
+    "types": "npx @wharfkit/cli generate -j ./build/contract.abi -f ./build/contract.types.ts"
+  },
+  "devDependencies": {
+    "@proton/vert": "^0.3.24",
+    "@types/chai": "^4.3.14",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.30",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "atomicassets": "^1.5.1",
+    "dotenv": "^16.4.5",
+    "eosjs": "^22.1.0"
+  }
+}
