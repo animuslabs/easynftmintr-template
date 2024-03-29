@@ -22,7 +22,7 @@
         >
           <div v-if="viewMode === 'detailed'" class="q-ma-sm text-color">
             <!-- Detailed view -->
-            <div class="q-mb-md text-h6 fit row justify-center content-center q-pa-md">
+            <div class="q-mb-md text-h6 fit row justify-center content-center q-pa-md" style="text-overflow: ellipsis;">
               {{ getName(asset) }}
             </div>
             <div class="row wrap justify-center content-center">
@@ -108,7 +108,7 @@
 
           <!-- Simple view -->
           <div v-if="viewMode === 'simple'" class="q-ma-sm text-color">
-            <div class="q-pa-md fit row wrap justify-center content-center text-bold text-h6">
+            <div class="q-pa-md fit row wrap justify-center content-center text-bold text-h6" style="text-overflow: ellipsis;">
               {{ getName(asset) }}
             </div>
             <div class="col-auto text-center">
