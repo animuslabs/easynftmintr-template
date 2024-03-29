@@ -17,28 +17,7 @@ let api
 let rpc
 
 const formatBloksTransaction = (network, txId) => {
-  let bloksSubdomain = "bloks.io"
-  switch (network) {
-    case "jungle":
-      bloksSubdomain = "jungle3.bloks.io"
-      break
-    case "telosTest":
-      bloksSubdomain = "telostest.eosauthority.com"
-      break
-    case "waxTest":
-      bloksSubdomain = "wax-test.bloks.io"
-      break
-    case "eos":
-      bloksSubdomain = "bloks.io"
-      break
-    case "wax":
-      bloksSubdomain = "wax.bloks.io"
-      break
-    case "telos":
-      bloksSubdomain = "telos.eosauthority.com"
-      break
-  }
-  return `https://${bloksSubdomain}/transaction/${txId}`
+  return ""
 }
 async function getFullTable({ code, scope, table }) {
   let limit = 100

@@ -9,7 +9,7 @@ yarn test
 ```
 
 ## Deploy
-You can configure the acount where you would like to deploy the contract. You can see the example contract deployed on Testnet [here](https://explorer-test.telos.net/account/easynftmintr). You can deploy the contract by running the following command (update fuckyeah.config.js and .env first)
+You can configure the acount where you would like to deploy the contract. You can see the example contract deployed on Testnet [here](https://jungle4.cryptolions.io/v2/explore/account/easynftmintr). You can deploy the contract by running the following command (update fuckyeah.config.js and .env first)
 ```bash
 yarn deploy [targetchainname]
 ```
@@ -22,8 +22,8 @@ For doing basic actions related to the easynftmintr contract. Feel free to modif
 #### example
 ```bash
 cd ./util
-CHAIN=telosTest node do templateset
-CHAIN=telosTest node do templaterm 2
+CHAIN=jungle node do templateset
+CHAIN=jungle node do templaterm 2
 ```
 When the contract is deployed you need to register NFTs to be minted, the mint contract needs to be listed in the authorized_accounts array on the atomicassets nft collection. Register each template by calling the `tempalteset` action with the relevant details.
 
@@ -35,7 +35,7 @@ You can uses these methods to setup your NFT collection/schemas, you will need t
 #### example
 ```bash
 cd ./util
-CHAIN=telosTest node nft createSchema
+CHAIN=jungle node nft createSchema
 ```
 
 ### setup.js
@@ -43,7 +43,7 @@ This script contains various utility functions for managing account authenticati
 #### example
 ```bash
 cd ./util
-CHAIN=telosTest node setup buyRam
+CHAIN=jungle node setup buyRam
 ```
 
 ## Next Steps

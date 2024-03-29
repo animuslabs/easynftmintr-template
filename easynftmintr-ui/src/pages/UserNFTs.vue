@@ -263,6 +263,7 @@ export default defineComponent({
           ipfsHash: getAssetIpfsHash(asset) // Extract IPFS hash
         }
       })
+      console.log(mergedAssets.value)
     }
 
     const ipfsImageUrl = (hash:string) => `${endpoints[3][1]}${hash}`
@@ -303,9 +304,9 @@ export default defineComponent({
       return filteredAssets.value.slice(start, end)
     })
 
-    onMounted(async() => {
-      await fetchAssets()
-    })
+    // onMounted(async() => {
+    //   await fetchAssets()
+    // })
 
     watch(() => store.mergedAssets, (newVal:AssetRow[]) => {
       mergedAssets.value = newVal // Update the reactive reference when the store's state changes

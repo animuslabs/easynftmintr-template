@@ -1,7 +1,6 @@
 module.exports = {
-  defaultChain: 'telosTest',
+  defaultChain: 'jungle',
   keys: {
-    telosTest: ["yourkeyhere"],
-    telos:[]
+    jungle: ["yourkeyhere"]
   }
 }
