@@ -1,7 +1,3 @@
-# Quasar App (meow-nfts-ui)
-
-A Quasar Project
-
 ## Install the dependencies
 ```bash
 yarn

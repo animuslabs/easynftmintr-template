@@ -47,5 +47,5 @@ CHAIN=telosTest node setup buyRam
 ```
 
 ## Next Steps
-Once you have the contract deployed and setup NFTs to be minted you can connect the UI to it. Take a look at The UI template [here](https://github.com/animuslabs/easynftmintr-ui).
+Once you have the contract deployed and setup NFTs to be minted you can connect the UI to it. Take a look at the UI template in this repo.
 
