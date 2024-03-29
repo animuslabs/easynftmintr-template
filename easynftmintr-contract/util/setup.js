@@ -45,6 +45,26 @@ const methods = {
     const result = await api.transact({ actions: [act] }, tapos)
     console.log(result.transaction_id, "result.transaction_id")
   },
+  async buyRam2() {
+    const act = {
+      account: "eosio",
+      name: "buyrambytes",
+      data: {
+        payer: "meownfttest1",
+        receiver: "meownfttest1",
+        bytes: 100000
+      },
+      authorization: [
+        {
+          actor: "meownfttest1",
+          permission: "active"
+        }
+      ]
+    }
+    // await doAction("updateauth", { account: "stake.boid", auth, parent: "owner", permission: "active" }, "eosio", contractAccount)
+    const result = await api.transact({ actions: [act] }, tapos)
+    console.log(result.transaction_id, "result.transaction_id")
+  },
   async boidActive() {
     const auth = {
       threshold: 1,

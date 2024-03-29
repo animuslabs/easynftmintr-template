@@ -38,7 +38,7 @@ const methods = {
         template_id: template.template_id,
         price: {
           contract: "eosio.token",
-          quantity: "0.1000 TLOS"
+          quantity: "0.1000 EOS"
         },
         schema_name: template.schema_name,
         collection_name,

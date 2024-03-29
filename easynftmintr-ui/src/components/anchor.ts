@@ -3,7 +3,7 @@ import AnchorLink, { APIClient, ChainId, LinkSession, PermissionLevel, TransactA
 import AnchorLinkBrowserTransport from "anchor-link-browser-transport"
 import { useUser } from "src/stores/anchorstore"
 import { networks, appname, endpoints } from "src/components/config"
-const client = new APIClient({ url: endpoints[1][1] })
+const client = new APIClient({ url: endpoints[12][1] })
 // const session:LinkChannelSession = {}
 export interface StoredSession {
   auth:{actor:string, permission:string},

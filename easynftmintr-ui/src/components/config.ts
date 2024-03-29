@@ -18,7 +18,8 @@ export const endpoints:string[][] = [
   ["Nefty blocks Telos Testnet Assets", "https://telos-test.neftyblocks.com/assets/"], // 8
   ["Nefty blocks Telos Testnet Templates", "https://telos-test.neftyblocks.com/templates/"], // 9
   ["Nefty blocks Telos Assets", "https://telos.neftyblocks.com/assets/"], // 10
-  ["Nefty blocks Telos Templates", "https://telos.neftyblocks.com/templates/"] // 11
+  ["Nefty blocks Telos Templates", "https://telos.neftyblocks.com/templates/"], // 11
+  ["Jungle Endpoint", "https://jungle4.cryptolions.io"] // 12
 ]
 export const networks:NetworkConfig[] = [
   // default network should be first!!!
@@ -34,12 +35,12 @@ export const networks:NetworkConfig[] = [
   //   nodeUrl: endpoints[1][1],
   //   logo: "https://assets-global.website-files.com/60ae1fd65f7b76f18ddd0bec/61044a5f70f5bbeb24b995ea_Symbol%202%402x.png"
   // }
-  {
-    name: "telostestnet",
-    chainId: "1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f",
-    nodeUrl: "https://telos.testnet.boid.animus.is",
-    logo: "https://assets-global.website-files.com/60ae1fd65f7b76f18ddd0bec/61044a5f70f5bbeb24b995ea_Symbol%202%402x.png"
-  }
+  // {
+  //   name: "telostestnet",
+  //   chainId: "1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f",
+  //   nodeUrl: "https://telos.testnet.boid.animus.is",
+  //   logo: "https://assets-global.website-files.com/60ae1fd65f7b76f18ddd0bec/61044a5f70f5bbeb24b995ea_Symbol%202%402x.png"
+  // }
   // {
   //   name: 'waxtestnet',
   //   chainId: 'f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12',
@@ -49,6 +50,12 @@ export const networks:NetworkConfig[] = [
   //   atomicMarket: 'https://wax-test.atomichub.io'
   //   atomicMarketApi: 'https://test.wax.api.atomicassets.io'
   // }
+  {
+    name: "jungletestnet",
+    chainId: "73e4385a2708e6d7048834fbc1079f2fabb17b3c125b146af438971e90716c4d",
+    nodeUrl: "https://jungle4.cryptolions.io",
+    logo: "/junglelogo.jpg"
+  }
 ]
 
 export function getNetworkByChainId(chainId:string):NetworkConfig {

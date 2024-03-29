@@ -56,6 +56,7 @@ CONTRACT mycontract: public contract {
   }
 
   [[eosio::on_notify("*::transfer")]] void listenDeposit(name from, name to, eosio::asset quantity, std::string memo) {
+    if(from == get_self()) return;
     auto template_id = stringToTemplateId(memo);
     nfts_table nfts(get_self(), get_self().value);
     auto existing = nfts.find(uint64_t(template_id));

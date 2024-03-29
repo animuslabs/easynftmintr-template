@@ -47,7 +47,7 @@ interface TemplatesPrices {
   collection_name:string
 }
 // Connect to the EOSIO node
-const client = new APIClient({ url: endpoints[2][1] })
+const client = new APIClient({ url: endpoints[12][1] })
 
 export const collections:string[] = ["meownfttest1"]
 
