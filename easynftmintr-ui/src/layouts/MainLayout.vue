@@ -55,7 +55,7 @@
           >
             <template #default>
               <div class="row items-center">
-                <div class="q-mr-sm">
+                <div class="q-mr-xs q-mt-xs">
                   built by the team at
                 </div>
                 <q-img src="/boidlogo-vert.png" style="width: 90px; height: auto" />
