@@ -1,5 +1,5 @@
 import { endpoints } from "./config"
-import { APIClient, Name } from "@greymass/eosio"
+import { APIClient, Name } from "@wharfkit/antelope"
 import { ObjectSchema, deserialize } from "atomicassets"
 
 interface TemplateRow {

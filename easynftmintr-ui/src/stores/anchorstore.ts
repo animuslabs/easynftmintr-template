@@ -1,8 +1,9 @@
 import { defineStore } from "pinia"
-import { LinkSession, NameType, PermissionLevelType } from "anchor-link"
+import { NameType, PermissionLevelType } from "@wharfkit/antelope"
 import { reactive } from "vue"
 import { link } from "../components/anchor"
 import { nftmintcontract } from "../components/atomic"
+import { Session } from "@wharfkit/session"
 class LoggedInState {
   account:null | string = null
   auth:null | PermissionLevelType = null
@@ -20,13 +21,13 @@ export const useUser = defineStore({
     }
   },
   actions: {
-    setUser(session:LinkSession | false) {
+    setUser(session:Session | false) {
       console.log("set user", session)
       // this.loggedIn
-      this.loggedIn.account = session ? session.auth.actor.toString() : null
-      this.loggedIn.auth = session ? session.auth : null
-      this.loggedIn.chainId = session ? session.chainId.toString() : null
-      this.loggedIn.wallet = session ? session.metadata.name : null
+      this.loggedIn.account = session ? session.actor.toString() : null
+      this.loggedIn.auth = session ? session.permissionLevel : null
+      this.loggedIn.chainId = session ? session.chain.id.toString() : null
+      this.loggedIn.wallet = session ? session.walletPlugin.metadata.name || "anchor" : null
       console.log(this.loggedIn)
     },
     async transfer(quantity:string, memo:string, contract:string) {

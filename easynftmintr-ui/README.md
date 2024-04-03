@@ -1,4 +1,9 @@
-## Install the dependencies
+## EASYNFTMINTR UI
+This UI connects to an instance of the easynftmintr contract and makes it easy for users to mint NFTs and view the inventory of NFTS they hold in their account.
+
+## Getting Started
+
+### Install the dependencies
 ```bash
 yarn
 # or

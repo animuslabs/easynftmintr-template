@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf" class="bg-primary">
-    <q-header class="bg-primary border-bottom" height-hint="80" style="border-bottom: 1px solid var(--secondary);">
+    <q-header height-hint="80" style="border-bottom: 1px solid var(--secondary);">
       <q-toolbar class="toolbar-content">
         <q-toolbar-title class="order-avatar" style="height: 100%; width: 100%" />
         <!-- buttons for internal and external navigation -->
@@ -19,7 +19,7 @@
           <q-btn label="login" flat text-color="white" class="font-bold" @click="login" />
         </div>
         <div v-else class="order-logged-in">
-          <q-btn :icon="`img:${logoImage}`" :label="loggedInAccount" text-color="accent" flat class="font-bold">
+          <q-btn :icon="`img:${logoImage}`" :label="loggedInAccount" text-color="white" flat>
             <q-menu dense separator class="no-border-radius">
               <q-list>
                 <q-item class="text-primary text-weight-bold" clickable v-close-popup @click="logout">
@@ -47,13 +47,21 @@
       <div class="footer-class">
         <div>
           <q-btn
+            :stack="false"
             color="white"
             flat
-            icon="img:/boidlogo-vert.png"
             type="a"
             href="https://boid.com"
-            style="width:120px; height:40px;"
-          />
+          >
+            <template #default>
+              <div class="row items-center">
+                <div class="q-mr-sm">
+                  built by the team at
+                </div>
+                <q-img src="/boidlogo-vert.png" style="width: 90px; height: auto" />
+              </div>
+            </template>
+          </q-btn>
         </div>
       </div>
     </q-footer>
@@ -65,7 +73,6 @@ import { defineComponent } from "vue"
 import { link, init, StoredSession } from "../components/anchor"
 import { getNetworkByChainId } from "src/components/config"
 import { useUser } from "../stores/anchorstore"
-import { PermissionLevel } from "anchor-link"
 
 export default defineComponent({
   name: "MainLayout",
@@ -79,7 +86,7 @@ export default defineComponent({
   computed: {
     logoImage():string {
       if (this.user.getLoggedIn && this.user.getLoggedIn.chainId) {
-        return getNetworkByChainId(this.user.getLoggedIn.chainId).logo
+        return getNetworkByChainId(this.user.getLoggedIn.chainId).logo?.toString() || ""
       } else {
         return ""
       }
@@ -99,14 +106,14 @@ export default defineComponent({
     async logout() {
       await link.logout()
     },
-    async restoreSession(session:StoredSession) {
-      const permissionLevel = PermissionLevel.from(session.auth)
-      await link.restore_session(permissionLevel, session.chainId)
-    },
-    async deleteSession(session:StoredSession) {
-      const permissionLevel = PermissionLevel.from(session.auth)
-      await link.deleteSession(permissionLevel, session.chainId)
-    },
+    // async restoreSession(session:StoredSession) {
+    //   const permissionLevel = PermissionLevel.from(session.auth)
+    //   await link.restore_session(permissionLevel, session.chainId)
+    // },
+    // async deleteSession(session:StoredSession) {
+    //   const permissionLevel = PermissionLevel.from(session.auth)
+    //   await link.deleteSession(permissionLevel, session.chainId)
+    // },
     openTGLink() {
       window.open("", "_blank")
     },

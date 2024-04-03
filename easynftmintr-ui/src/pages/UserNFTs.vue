@@ -123,7 +123,7 @@
                 <div class="q-pa-md fit row wrap justify-center content-center text-bold text-h6" style="text-overflow: ellipsis;">
                   {{ getName(asset) }}
                 </div>
-                <div class="row items-center justify-center">
+                <div class="row flex-center">
                   <div class="col-auto">
                     <img
                       :src="ipfsImageUrl(getAssetIpfsHash(asset))"

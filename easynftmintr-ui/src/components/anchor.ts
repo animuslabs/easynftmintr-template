@@ -1,25 +1,34 @@
 import { LocalStorage } from "quasar"
-import AnchorLink, { APIClient, ChainId, LinkSession, PermissionLevel, TransactArgs } from "anchor-link"
-import AnchorLinkBrowserTransport from "anchor-link-browser-transport"
+import { APIClient, Checksum256Type, PermissionLevel } from "@wharfkit/antelope"
 import { useUser } from "src/stores/anchorstore"
 import { networks, appname, endpoints } from "src/components/config"
+import { ChainId, Session, SessionKit, TransactArgs } from "@wharfkit/session"
+import { WebRenderer } from "@wharfkit/web-renderer"
+import { WalletPluginAnchor } from "@wharfkit/wallet-plugin-anchor"
+import { toObject } from "src/components/lib"
+
 const client = new APIClient({ url: endpoints[12][1] })
+const webRenderer = new WebRenderer()
+
 // const session:LinkChannelSession = {}
 export interface StoredSession {
   auth:{actor:string, permission:string},
-  chainId:ChainId
+  chainId:string
 }
 class LinkManager {
   store:typeof useUser
   appname = appname
-  session:LinkSession | null = null
-  transport = new AnchorLinkBrowserTransport({ storagePrefix: "ba" })
+  transport = new WalletPluginAnchor()
   client!:APIClient
   rpc!:typeof client.v1.chain
-  link = new AnchorLink({
-    transport: this.transport,
-    chains: networks
+  sessionKit = new SessionKit({
+    appName: this.appname,
+    walletPlugins: [this.transport],
+    chains: networks,
+    ui: webRenderer
   })
+
+  session:Session|null = null
 
   constructor(usrStore:typeof useUser) {
     this.store = usrStore
@@ -38,25 +47,21 @@ class LinkManager {
   }
 
   async login() {
-    const identity = await this.link.login(this.appname)
+    const identity = await this.sessionKit.login()
     if (identity) {
       const { session } = identity
       this.session = session
       this.setApi(this.session.client)
       this.try_restore_session()
-      console.log(session.auth)
+      console.log(toObject({ actor: session.actor, acct: session.account }))
     }
   }
 
   async logout() {
     if (this.session) {
-      await this.link.removeSession(
-        this.appname,
-        this.session.auth,
-        this.session.chainId
-      )
+      this.sessionKit.logout()
+      this.setApi(this.session.client)
       this.session = null
-      this.setApi(this.link.client)
       this.store().setUser(false)
       // this.try_restore_session()
     } else {
@@ -65,24 +70,26 @@ class LinkManager {
   }
 
   async deleteSession(permissionlevel:PermissionLevel, chainId:ChainId):Promise<void> {
-    if (!this.session) return this.link.removeSession(this.appname, permissionlevel, chainId)
-    console.log(this.session.auth.equals(permissionlevel))
-    console.log(this.session.chainId.equals(chainId))
-    if (this.session.auth.equals(permissionlevel) && this.session.chainId.equals(chainId)) {
-      console.log("current session")
-      this.logout()
-    } else {
-      await this.link.removeSession(this.appname, permissionlevel, chainId)
-    }
+    console.error("deleteSession not implemented")
+    // if (!this.session) return this.session.removeSession(this.appname, permissionlevel, chainId)
+    // console.log(this.session.auth.equals(permissionlevel))
+    // console.log(this.session.chainId.equals(chainId))
+    // if (this.session.auth.equals(permissionlevel) && this.session.chainId.equals(chainId)) {
+    //   console.log("current session")
+    //   this.logout()
+    // } else {
+    //   await this.session.removeSession(this.appname, permissionlevel, chainId)
+    // }
   }
 
-  async restore_session(permissionlevel:PermissionLevel, chainId:ChainId):Promise<void> {
-    const session = await this.link.restoreSession(
-      this.appname,
-      permissionlevel,
-      chainId
+  async restore_session(permissionlevel:PermissionLevel, chainId:Checksum256Type):Promise<void> {
+    const session = await this.sessionKit.restore(
+      {
+        chain: chainId,
+        permission: permissionlevel.permission,
+        actor: permissionlevel.actor
+      }
     )
-    // console.log(session);
     if (session) {
       this.session = session
       this.setApi(this.session.client)
@@ -90,11 +97,11 @@ class LinkManager {
     }
   }
 
-  async try_restore_session():Promise<false | LinkSession> {
-    const session = await this.link.restoreSession(this.appname)
+  async try_restore_session():Promise<false | Session> {
+    const session = await this.sessionKit.restore()
     if (session) {
       console.log(
-        `${session.chainId} session reestablished for ${session.auth}`
+        `${session.chain.id} session reestablished for ${session.actor.toString()}`
       )
       this.session = session
       this.setApi(this.session.client)
@@ -102,13 +109,13 @@ class LinkManager {
       return session
     } else {
       console.log("no saved sessions available")
-      this.setApi(this.link.client) // set api to default chain
+      if (this.session) this.setApi(this.session.client) // set api to default chain
       return false
     }
   }
 
   getSessions():StoredSession[] {
-    const key = `ba-${this.appname}-list`
+    const key = `${this.appname}-list`
     if (LocalStorage.has(key)) {
       const data = LocalStorage.getItem(key)?.toString()
       if (data) return JSON.parse(data)

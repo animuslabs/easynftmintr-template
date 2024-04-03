@@ -1,5 +1,5 @@
 # EASYNFTMINTR
-EASYNFTMINTR is a template for creating an NFT Minting site where users can pay with tokens to mint NFTs. This is the contract wich also connects to the minting smart contract.
+EASYNFTMINTR is a template for creating an NFT Minting site where users can pay with tokens to mint NFTs. This is the contract wich is responsible for holding a table of NFTs which can be minted as well handling the minting of NFTs when token deposits are made.
 
 ## Build and Test
 ```bash
