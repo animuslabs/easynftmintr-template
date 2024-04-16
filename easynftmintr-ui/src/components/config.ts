@@ -10,17 +10,17 @@ export interface NetworkConfig {
 
 export const endpoints:string[][] = [
   ["EOS Endpoint", "https://eos.api.animus.is"],
-  ["Telos Endpoint", "https://telos.api.animus.is"],
-  ["Telos Testnet Endpoint", "https://telos.testnet.boid.animus.is"],
+  ["", ""],
+  ["", ""],
   ["IPFS Endpoint", "https://ipfs.animus.is/ipfs/"], // 3
   ["EOS AtomicAssets", "https://eos.api.atomicassets.io"], // 4
-  ["WAX AtomicAssets", "https://wax.eu.eosamsterdam.net"], // 5
+  ["", ""], // 5
   ["EOS AtomicHub", "https://eos.atomichub.io/explorer/asset/"], // 6
   ["EOS AtomicHub Templates", "https://eos.atomichub.io/explorer/template/"], // 7
-  ["Nefty blocks Telos Testnet Assets", "https://telos-test.neftyblocks.com/assets/"], // 8
-  ["Nefty blocks Telos Testnet Templates", "https://telos-test.neftyblocks.com/templates/"], // 9
-  ["Nefty blocks Telos Assets", "https://telos.neftyblocks.com/assets/"], // 10
-  ["Nefty blocks Telos Templates", "https://telos.neftyblocks.com/templates/"], // 11
+  ["", ""], // 8
+  ["", ""], // 9
+  ["", ""], // 10
+  ["", ""], // 11
   ["Jungle Endpoint", "https://jungle4.cryptolions.io"] // 12
 ]
 export const networks:ChainDefinitionType[] = [

@@ -49,10 +49,10 @@ interface TemplatesPrices {
 // Connect to the EOSIO node
 const client = new APIClient({ url: endpoints[12][1] })
 
-export const collections:string[] = ["meownfttest1"]
+export const collections:string[] = [process.env.collection as string]
 
 const code = "atomicassets" // contract account name
-export const nftmintcontract = "easynftmintr" // contract account name for minting NFTs
+export const nftmintcontract = process.env.nftmintcontract as string // contract account name for minting NFTs
 const nftmintcontracttable = "nfts" // contract table name for mintable NFTs
 // tables
 const tableTemplate = "templates"

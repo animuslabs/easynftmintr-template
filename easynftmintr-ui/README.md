@@ -61,3 +61,5 @@ and collection/contract names change
 
 config.ts --> change networks
 
+quasar.config.js --> update build.env with your specific contract and collection names
+

@@ -51,6 +51,10 @@ module.exports = configure(function(ctx) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
+      env: {
+        nftmintcontract: "easynftmintr",
+        collection: "meownfttest1"
+      },
       vueRouterMode: "history" // available values: 'hash', 'history'
 
       // transpile: false,
@@ -77,6 +81,7 @@ module.exports = configure(function(ctx) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-devServer
     devServer: {
+
       server: {
         type: "http"
       },
