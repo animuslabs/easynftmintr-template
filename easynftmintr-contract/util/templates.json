@@ -1,0 +1,152 @@
+[
+  {
+    "template_id": 164,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 1,
+    "immutable_data": {
+      "name": "Meow - Master of Electricity",
+      "img": "QmSHXaRjMvJmu7w78M6R41hECfDAy4uit3xAcN9rQMvtdi",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  },
+  {
+    "template_id": 165,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 3,
+    "immutable_data": {
+      "name": "Meow - DJ",
+      "img": "QmXD4GMMB1MfVPhmAP3eVhhFV95iSiWwhsxo2zjui6p3CW",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  },
+  {
+    "template_id": 166,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 1,
+    "immutable_data": {
+      "name": "Meow - Vampire",
+      "img": "QmQSyuALyb17D7xvZECwWvXrTnEZH1eV2tZTV44cA5rncB",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  },
+  {
+    "template_id": 167,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 0,
+    "immutable_data": {
+      "name": "Meow - Pianist",
+      "img": "QmW153b7keHA868vqnLKXBsPirCU57acXbyceG6EKwfR8b",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute/"
+    }
+  },
+  {
+    "template_id": 168,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 0,
+    "immutable_data": {
+      "name": "Meow - Master of Electricity",
+      "img": "QmSHXaRjMvJmu7w78M6R41hECfDAy4uit3xAcN9rQMvtdi",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  },
+  {
+    "template_id": 169,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 0,
+    "immutable_data": {
+      "name": "Meow - DJ",
+      "img": "QmXD4GMMB1MfVPhmAP3eVhhFV95iSiWwhsxo2zjui6p3CW",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  },
+  {
+    "template_id": 170,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 0,
+    "immutable_data": {
+      "name": "Meow - Vampire",
+      "img": "QmQSyuALyb17D7xvZECwWvXrTnEZH1eV2tZTV44cA5rncB",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  },
+  {
+    "template_id": 171,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 0,
+    "immutable_data": {
+      "name": "Meow - Pianist",
+      "img": "QmW153b7keHA868vqnLKXBsPirCU57acXbyceG6EKwfR8b",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute/"
+    }
+  },
+  {
+    "template_id": 172,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 0,
+    "immutable_data": {
+      "name": "Meow - Hippie",
+      "img": "QmfVWVYzwrJfDD4rbtfe6BDiJcbDsz8x1cer5UfQzPARXW",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  },
+  {
+    "template_id": 173,
+    "schema_name": "meowmeow",
+    "transferable": 1,
+    "burnable": 1,
+    "max_supply": 100,
+    "issued_supply": 0,
+    "immutable_data": {
+      "name": "Meow - Aztec Shaman",
+      "img": "QmaJHc4cWksLh8MGoBkYjuLAmwsukKSvecQv3G25RLuRrr",
+      "description": "Lets change the world! One 'meow' at a time.",
+      "social": "https://t.me/HelloTelos/698277",
+      "www": "https://meow.institute"
+    }
+  }
+]

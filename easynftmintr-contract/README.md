@@ -14,10 +14,10 @@ You can configure the acount where you would like to deploy the contract. You ca
 yarn deploy [targetchainname]
 ```
 ## Setup Atomicassets collection
-You need to setup an atomicassets collection. The easiest way is to use [atomichub.io](https://eos.atomichub.io/creator) and follow the instructions to setup a collection, schemas, templates. When you setup the collection, make sure your contract account is listed as an authorized minter for the collection.
+You need to setup an atomicassets collection. On EOS the easiest way is to use [atomichub.io](https://eos.atomichub.io/creator) and follow the instructions to setup a collection, schemas, templates. When you setup the collection, make sure your contract account is listed as an authorized minter for the collection. For testnets where atomichub is not available or when you need additional control this repo has scripts available inside the `./util` folder. Refer to the `README.md` in the util folder for more details.
 
 ## Initialize the contract
-you need to call the `templateset` action with the details of the collection/templates you just created. Refer to the tests folder for examples. You can use [bloks.io](https://bloks.io) or [cleos](https://github.com/AntelopeIO/cdt) to construct the transaction.
+you need to call the `templateset` action with the details of the collection/templates you just created. Refer to the tests folder for examples. You can use [bloks.io](https://bloks.io) or [cleos](https://github.com/AntelopeIO/cdt) to construct the transaction. You can also use the `do.js` script which is documented in the `util` folder.
 
 ## Next Steps
 Once you have the contract deployed and setup NFTs to be minted you can connect the UI to it. Take a look at the UI template in this repo.
