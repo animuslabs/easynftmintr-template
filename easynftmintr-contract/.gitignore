@@ -3,5 +3,9 @@
 .idea
 node_modules
 build
-
+.DS_Store
 .env
+.thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

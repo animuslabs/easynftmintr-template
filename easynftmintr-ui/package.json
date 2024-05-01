@@ -1,13 +1,9 @@
 {
-  "name": "meow-nfts-ui",
+  "name": "easynftmintr-ui",
   "version": "0.0.1",
-  "description": "Meow NFTs",
-  "productName": "Meow NFTs",
-  "author": "Seth@Boid.com <mchosc@animusystems.com>",
-  "private": true,
+  "description": "easynftmintr-ui",
   "scripts": {
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
-    "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
     "lint": "eslint --ext .js,.ts,.vue --fix ./",
